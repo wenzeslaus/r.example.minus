@@ -24,8 +24,8 @@ jobs:
         grass -c EPSG:4326 ~/grasstmploc -e
     - name: Chanage shebang to just Python (7.4 needs python2)
       run: |
-        sed -i s/python3/python/g r.example.plus.py
-        sed -i s/python3/python/g testsuite/test_r_example_plus.py
+        sed -i s/python3/python/g r.example.minus.py
+        sed -i s/python3/python/g testsuite/test_r_example_minus.py
     - name: Install the module
       run: |
         grass ~/grasstmploc/PERMANENT --exec g.extension extension=${{ github.event.repository.name }} url=. --verbose
@@ -43,5 +43,5 @@ jobs:
     - name: Run test (manually specified files)
       run: |
         cd testsuite/
-        grass -c ~/nc_spm_08_grass7/test --exec ./test_r_example_plus.py
+        grass -c ~/nc_spm_08_grass7/test --exec ./test_r_example_minus.py
         rm -rf ~/nc_spm_08_grass7/test

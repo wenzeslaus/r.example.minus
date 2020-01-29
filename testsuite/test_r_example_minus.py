@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 """
-MODULE:    Test of r.example.plus
+MODULE:    Test of r.example.minus
 
 AUTHOR(S): Vaclav Petras <wenzeslaus gmail com>
 
-PURPOSE:   Test of r.example.plus (example of a simple test of a module)
+PURPOSE:   Test of r.example.minus (example of a simple test of a module)
 
 COPYRIGHT: (C) 2020 by Vaclav Petras and the GRASS Development Team
 
@@ -26,7 +26,7 @@ def get_raster_min_max(raster_map):
 
 
 class TestWatershed(TestCase):
-    """The main (and only) test case for the r.example.plus module"""
+    """The main (and only) test case for the r.example.minus module"""
 
     # Raster maps be used as inputs (they exist in the NC SPM sample location)
     test_input_1 = "elevation"
@@ -68,7 +68,7 @@ class TestWatershed(TestCase):
         """Check that the output is created"""
         # run the watershed module
         self.assertModule(
-            "r.example.plus",
+            "r.example.minus",
             a_input=self.test_input_1,
             b_input=self.test_input_2,
             output=self.output,
@@ -87,19 +87,19 @@ class TestWatershed(TestCase):
         most of the implementation.
         """
         self.assertModuleFail(
-            "r.example.plus",
+            "r.example.minus",
             b_input=self.test_input_2,
             output=self.output,
             msg="The a_input parameter should be required",
         )
         self.assertModuleFail(
-            "r.example.plus",
+            "r.example.minus",
             a_input=self.test_input_1,
             output=self.output,
             msg="The b_input parameter should be required",
         )
         self.assertModuleFail(
-            "r.example.plus",
+            "r.example.minus",
             a_input=self.test_input_1,
             b_input=self.test_input_2,
             msg="The output parameter should be required",
@@ -108,7 +108,7 @@ class TestWatershed(TestCase):
     def test_output_range(self):
         """Check to see if output is within the expected range"""
         self.assertModule(
-            "r.example.plus",
+            "r.example.minus",
             a_input=self.test_input_1,
             b_input=self.test_input_2,
             output=self.output,

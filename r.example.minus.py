@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-MODULE:    r.example.plus
+MODULE:    r.example.minus
 
 AUTHOR(S): Vaclav Petras <wenzeslaus gmail com>
 
